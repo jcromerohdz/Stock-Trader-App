@@ -4,7 +4,7 @@ const state = {
 };
 
 const actions = {
-  sellStocks({ commit }, order) {
+  sellStock({ commit }, order) {
     commit('SELL_STOCKS', order);
   }
 };

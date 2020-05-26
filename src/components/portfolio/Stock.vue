@@ -2,7 +2,7 @@
 <template>
   <div class="col col-sm-6 col-md-4">
     <div class="card mb-3">
-      <div class="card-header alert-success">{{stock.name}} (Price: {{stock.price}}) | Quantity: {{stock.quantity}}</div>
+      <div class="card-header alert-info">{{stock.name}} (Price: {{stock.price}}) | Quantity: {{stock.quantity}}</div>
       <div class="card-body">
         <div class="input-group mb-3">
           <input
@@ -47,17 +47,18 @@ export default {
     };
   },
   methods: {
-    ...mapActions([
-        'sellStock'
-    ]),
+    ...mapActions({
+        placeSellOrder: 'sellStock'
+    }),
     sellStock(){
-        // eslint-disable-next-line no-unused-vars
+        
         const order = {
           stockId: this.stock.id,
           stockPrice: this.stock.price,
           quantity: this.quantity
         }
-        this.sellStock()
+        this.placeSellOrder(order)
+        this.quantity = 0
     } 
   }
 };
