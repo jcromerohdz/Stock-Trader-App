@@ -1,16 +1,23 @@
 <template>
-  <div id="app">
+  <div id="app" class="container">
+    <appHeader></appHeader>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import Header from './components/Header'
 
 export default {
   name: 'App',
+  components: {
+    appHeader: Header
+  }
 }
 </script>
 
 <style>
-
+  body {
+    padding: 30px;
+  }
 </style>
