@@ -6,7 +6,7 @@ const state = {
 const actions = {
   // eslint-disable-next-line no-unused-vars
   buyStock: ({ commit }, order) => {
-    commit()
+    commit('BUY_STOCK', order)
   },
   initStocks: ({ commit }) => {
     commit('SET_STOCKS', stocks)
