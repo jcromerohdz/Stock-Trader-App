@@ -18,7 +18,7 @@
           <b-dropdown-item href="#">Save Data</b-dropdown-item>
           <b-dropdown-item href="#">Load Data</b-dropdown-item>
         </b-nav-item-dropdown>
-
+        <b-nav-item ><strong> {{ funds }} </strong> </b-nav-item>
         
       </b-navbar-nav>
     </b-collapse>
@@ -29,7 +29,11 @@
 
 <script>
 export default {
-  
+  computed:{
+    funds(){
+      return this.$store.getters.funds
+    }
+  }
 }
 </script>
 
