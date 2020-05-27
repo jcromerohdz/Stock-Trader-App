@@ -1,5 +1,5 @@
 <template>
-<div>
+<div id="header">
   <b-navbar toggleable="lg" type="dark" variant="info">
       <b-navbar-brand :to="'/'">Stock Trader</b-navbar-brand>
 
@@ -48,5 +48,7 @@ export default {
 </script>
 
 <style scoped>
-
+ #header{
+   padding-bottom: 10px;
+ }
 </style>
