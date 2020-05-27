@@ -12,22 +12,16 @@
             aria-label="Quantity"
             aria-describedby="basic-addon2"
             v-model="quantity"
+            :class="{danger: insufficientQuantity}"
           />
 
           <div class="pull-right">
-            <!-- <div class="input-group-text" id="btnGroupAddon" disabled>@</div>
-            <span class="input-group-text alert-success" 
-            id="basic-addon2"
-            @click="buyStock"
-            :disabled="quantity <= 0 || !Number.isInteger(quantity)">
-            Buy
-            </span> -->
             <button type="button" 
               class="btn btn-success"
               @click="sellStock"
-              :disabled="quantity <= 0"
+              :disabled="insufficientQuantity || quantity <= 0"
               >
-              Sell
+              {{ insufficientQuantity ? 'Not enough' : 'Sell'}}
               </button>
           </div>
         </div>
@@ -45,6 +39,11 @@ export default {
       text: "",
       quantity: 0
     };
+  },
+  computed: {
+    insufficientQuantity(){
+      return this.quantity > this.stock.quantity
+    }
   },
   methods: {
     ...mapActions({
@@ -68,4 +67,7 @@ export default {
 #box {
   padding: 15px;
 }
+.danger {
+   border: 1px solid red;
+ }
 </style>

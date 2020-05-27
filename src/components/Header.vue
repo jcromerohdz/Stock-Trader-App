@@ -13,12 +13,12 @@
 
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
-        <b-nav-item :to="'/stocks'">End Day</b-nav-item>
+        <b-nav-item @click="endDay">End Day</b-nav-item>
         <b-nav-item-dropdown text="Save & Load" right>
           <b-dropdown-item href="#">Save Data</b-dropdown-item>
           <b-dropdown-item href="#">Load Data</b-dropdown-item>
         </b-nav-item-dropdown>
-        <b-nav-item ><strong> {{ funds }} </strong> </b-nav-item>
+        <b-nav-item ><strong>Founds: {{ funds|currency }} </strong> </b-nav-item>
         
       </b-navbar-nav>
     </b-collapse>
@@ -28,10 +28,20 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   computed:{
     funds(){
       return this.$store.getters.funds
+    }
+  },
+  methods: {
+    ...mapActions([
+      'randomizeStocks'
+    ]),
+    endDay() {
+     this.randomizeStocks() 
     }
   }
 }
