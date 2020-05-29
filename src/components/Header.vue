@@ -18,7 +18,7 @@
           <b-dropdown-item @click="saveData">Save Data</b-dropdown-item>
           <b-dropdown-item @click="loadData">Load Data</b-dropdown-item>
         </b-nav-item-dropdown>
-        <b-nav-item ><strong>Founds: {{ funds|currency }} </strong> </b-nav-item>
+        <b-nav-item ><strong>Funds: {{ funds|currency }} </strong> </b-nav-item>
         
       </b-navbar-nav>
     </b-collapse>
