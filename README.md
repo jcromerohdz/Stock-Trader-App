@@ -1,4 +1,10 @@
-# stock-trader-app
+# Description
+This is Stock Trader Applicaton that use Vue JS for the interactivity and Vuex for state manamgement as well firebase for data persistance.
+
+## Screenshot
+
+![](https://github.com/jcromerohdz/)<br>
+
 
 ## Project setup
 ```
